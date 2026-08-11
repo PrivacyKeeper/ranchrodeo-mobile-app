@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "uniwind";
+
+/* Palette read from the shipped ranchrodeo.pro stylesheet, so the app
+   matches the site a user just came from. */
+@theme {
+  --color-background: #14100c;
+  --color-surface: #1e1813;
+  --color-card: #261f18;
+  --color-border: #3f342a;
+  --color-text: #e3d8c8;
+  --color-muted: #ac9c86;
+  --color-accent: #b3402f;
+  --color-accentAlt: #d8a05c;
+  --color-cream: #f1e6d4;
+  --color-success: #4ba36b;
+  --color-warning: #d99a2b;
+  --color-danger: #c8503f;
+}
