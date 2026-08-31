@@ -40,6 +40,19 @@ export const app = {
    * rather than one.
    */
   eventCodes: ["ranch_bronc", "wild_cow_milking", "team_penning", "team_sorting", "ranch_doctoring", "wild_horse_race", "ranch_branding", "steer_mugging", "trailer_loading", "ranch_sorting"] as readonly string[],
+  /**
+   * What a run in this event is actually measured in.
+   *
+   * Roughstock is judged, not timed: a bronc ride is two judges marking the
+   * horse and the rider out of 25 each, and the eight seconds is a pass/fail
+   * gate rather than the result. Asking a bronc rider for "Time (seconds)" and
+   * filing their 82-point ride in `final_time` records the wrong number in the
+   * wrong column, and it reads back as an 82-second ride.
+   *
+   * "either" is for ranch rodeo, where the card is genuinely mixed — ranch
+   * bronc is judged and every other event on it is timed.
+   */
+  resultKind: "either" as "time" | "score" | "either",
   eventLabel: "Ranch rodeo",
   tagline: "Placings become points before the dust settles.",
   associations: ["WRCA"] as readonly string[],
