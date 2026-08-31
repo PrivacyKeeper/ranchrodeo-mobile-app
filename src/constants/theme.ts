@@ -24,6 +24,22 @@ export const app = {
   short: "RanchRodeo",
   domain: "ranchrodeo.pro",
   eventType: "ranchrodeo",
+  /**
+   * The event_type codes this app covers, EXACTLY as they appear in the
+   * `reference_options` table.
+   *
+   * Deliberately separate from `eventType` above, which is the app's own slug
+   * and does not match the database ("tiedown" vs "tie_down_roping"). Reusing
+   * the slug as a filter silently matched nothing: the query succeeded, the
+   * screen said the producer was not running this event, and there was no
+   * error anywhere to notice.
+   *
+   * An array because the mapping is genuinely one-to-many. Team roping is two
+   * rows, header and heeler, and a heeler who only saw the header rows would
+   * conclude they had not been entered. Ranch rodeo is a whole card of events
+   * rather than one.
+   */
+  eventCodes: ["ranch_bronc", "wild_cow_milking", "team_penning", "team_sorting", "ranch_doctoring", "wild_horse_race", "ranch_branding", "steer_mugging", "trailer_loading", "ranch_sorting"] as readonly string[],
   eventLabel: "Ranch rodeo",
   tagline: "Placings become points before the dust settles.",
   associations: ["WRCA"] as readonly string[],
