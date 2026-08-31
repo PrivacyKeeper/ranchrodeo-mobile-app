@@ -6,10 +6,12 @@ module.exports = {
     slug: "ranchrodeo",
     scheme: "ranchrodeo",
     version: '0.1.0',
+    icon: './assets/icon.png',
     orientation: 'portrait',
     userInterfaceStyle: 'dark',
     newArchEnabled: true,
     splash: {
+      image: './assets/splash.png',
       resizeMode: 'contain',
       backgroundColor: "#14100c",
     },
@@ -30,6 +32,7 @@ module.exports = {
     android: {
       package: "pro.ranchrodeo.app",
       adaptiveIcon: {
+        foregroundImage: './assets/adaptive-icon.png',
         backgroundColor: "#14100c",
       },
       edgeToEdgeEnabled: true,
@@ -40,7 +43,7 @@ module.exports = {
         },
       },
     },
-    web: { bundler: 'metro', output: 'static' },
+    web: { bundler: 'metro', output: 'static', favicon: './assets/favicon.png' },
     plugins: [
       'expo-router',
       'expo-video',
